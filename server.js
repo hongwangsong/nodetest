@@ -3,7 +3,6 @@ var fs = require("fs");
 var path = require("path");
 var mime = require("mime");
 var chatServer = require("./lib/chat_server");
-var socketio = require("socket.io");
 var cache = {};
 
 var server = http.createServer(function(request,response){
@@ -18,15 +17,9 @@ var server = http.createServer(function(request,response){
 });
 
 chatServer.listen(server);
-//server.listen(3000,function(){
-//	console.log("server listening on port 3000");
-//});
-var io;
-var guestNumber = 1;
-var nickNames = {};
-var namesUsed = [];
-var currentRoom = {};
- 
+server.listen(3000,function(){
+	console.log("server listening on port 3000");
+});
 
 
 function send404(response){
