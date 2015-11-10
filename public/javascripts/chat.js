@@ -25,7 +25,7 @@ chat.prototype.processCommand = function(command){
 			words.shift();
 			var room = words.join(" ");
 			this.changeRoom(room);
-			bread;
+			break;
 		case "nick":
 			words.shift();
 			var name = words.join(" ");
